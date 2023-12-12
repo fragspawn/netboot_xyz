@@ -1,0 +1,26 @@
+version: "2.1"
+services:
+  netbootxyz:
+    image: ghcr.io/netbootxyz/netbootxyz
+    container_name: netbootxyz
+    environment:
+      - INTERFACE=${ETH}
+      #- MENU_VERSION=2.0.75
+    volumes:
+      - ./config:/config
+      - ./assets:/assets
+    ports:
+      - 3000:3000
+      - 69:69/udp
+      - 8080:80
+    restart: always 
+  netbootdhcpd:
+    image: networkboot/dhcpd
+    container_name: netbootdhcpd
+    environment:
+      - DHCPD_PROTOCOL=4 
+      - INTERFACE=${ETH}
+    volumes:
+      - ./dhcpd:/data
+    network_mode: "host"
+    command: '/entrypoint.sh enp0s20f0u1u1'
