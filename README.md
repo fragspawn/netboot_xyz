@@ -7,9 +7,9 @@ netbootxyz/netbootxyz - Contains nginx and tftpd with admin panel to populate do
 networkboot/dhcpd - A dhcpd server configured to point to tftp netboot xyz image for execution
 
 ## volumes
-assets - the documentroot for nginx server
-config - the netboot xyz config and admin panel files 
-dhcpd - dhcpd.conf with net configs for pxebooting
+* assets - the documentroot for nginx server
+* config - the netboot xyz config and admin panel files 
+* dhcpd - dhcpd.conf with net configs for pxebooting
 
 ## setup
 edit docker-compse last line with the NIC interface name on the host running this
