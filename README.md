@@ -13,7 +13,7 @@ networkboot/dhcpd - A dhcpd server configured to point to tftp netboot xyz image
 
 ## setup
 edit docker-compse last line with the NIC interface name on the host running this
-configure abive NIC with common address subnet to the one defined in dhcpd.conf
+configure above bridge with common address subnet to the one defined in dhcpd.conf
 provide the NIC with a route to the Internet
 
 ## use

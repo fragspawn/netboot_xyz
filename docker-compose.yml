@@ -5,7 +5,6 @@ services:
     container_name: netbootxyz
     environment:
       - INTERFACE=${ETH}
-      #- MENU_VERSION=2.0.75
     volumes:
       - ./config:/config
       - ./assets:/assets
@@ -13,7 +12,7 @@ services:
       - 3000:3000
       - 69:69/udp
       - 8080:80
-    restart: always 
+    restart: always
   netbootdhcpd:
     image: networkboot/dhcpd
     container_name: netbootdhcpd
@@ -23,4 +22,5 @@ services:
     volumes:
       - ./dhcpd:/data
     network_mode: "host"
-    command: '/entrypoint.sh enp0s20f0u1u1'
+    #command: '/entrypoint.sh enp0s20f0u1u1'
+    command: '/entrypoint.sh br0'
